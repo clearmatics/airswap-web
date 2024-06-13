@@ -28,7 +28,7 @@ const loadLastAccount = () => {
       provider,
       address,
     };
-  } catch (e) {
+  } catch (e: any) {
     return null;
   }
 };

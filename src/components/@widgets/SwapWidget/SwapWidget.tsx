@@ -1,4 +1,4 @@
-import React, { FC, useContext, useEffect, useMemo, useState } from "react";
+import { FC, useContext, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory, useLocation } from "react-router-dom";
 
@@ -371,7 +371,7 @@ const SwapWidget: FC = () => {
       );
 
       setActiveOrderNonce(transaction?.order.nonce);
-    } catch (e) {
+    } catch (e: any) {
       console.error("Error taking order:", e);
     }
   };

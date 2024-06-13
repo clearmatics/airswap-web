@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, ReactNode } from "react";
 
 import {
   Container,
@@ -10,6 +10,7 @@ import {
 type PopoverSectionType = {
   title?: string;
   className?: string;
+  children?: ReactNode;
 };
 
 const PopoverSection: FC<PopoverSectionType> = ({

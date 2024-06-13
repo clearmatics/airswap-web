@@ -1,4 +1,4 @@
-import React, { FC, ReactElement, useContext, useEffect } from "react";
+import { FC, ReactElement, useContext, useEffect, ReactNode } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
@@ -23,6 +23,7 @@ import { InnerContainer, StyledPage, StyledSocialButtons } from "./Page.styles";
 
 type PageProps = {
   className?: string;
+  children?: ReactNode;
 };
 
 const Page: FC<PageProps> = ({ children, className }): ReactElement => {

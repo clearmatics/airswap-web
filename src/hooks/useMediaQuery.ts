@@ -20,7 +20,7 @@ const useMediaQuery = (mediaQuery: string): boolean => {
 
     try {
       mediaQueryList.addEventListener("change", documentChangeHandler);
-    } catch (e) {
+    } catch (e: any) {
       // Safari isn't supporting mediaQueryList.addEventListener
       mediaQueryList.addListener(documentChangeHandler);
     }
@@ -29,7 +29,7 @@ const useMediaQuery = (mediaQuery: string): boolean => {
     return () => {
       try {
         mediaQueryList.removeEventListener("change", documentChangeHandler);
-      } catch (e) {
+      } catch (e: any) {
         // Safari isn't supporting mediaQueryList.removeEventListener
         mediaQueryList.removeListener(documentChangeHandler);
       }

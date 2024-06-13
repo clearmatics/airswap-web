@@ -1,4 +1,4 @@
-import React, { Dispatch, FC, useCallback, useState } from "react";
+import React, { FC, useCallback, useState } from "react";
 
 import Icon from "../Icon/Icon";
 import {
@@ -47,7 +47,7 @@ const Dropdown: FC<DropdownProps> = ({
   // so it's a separate div element.
   const [activeHoverIndex, setActiveHoverIndex] = useState(activeOptionIndex);
 
-  const sizerRef = useCallback((node) => {
+  const sizerRef = useCallback((node: any) => {
     if (node !== null) {
       setSelectWidth(node.getBoundingClientRect().width);
     }

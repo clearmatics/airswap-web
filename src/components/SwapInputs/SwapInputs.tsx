@@ -136,7 +136,9 @@ const SwapInputs: FC<{
         label={t("orders.from")}
         selectedToken={isSell ? baseTokenInfo : quoteTokenInfo}
         subText={baseAmountSubText}
-        onAmountChange={(e) => handleTokenAmountChange(e, onBaseAmountChange)}
+        onAmountChange={(e: any) =>
+          handleTokenAmountChange(e, onBaseAmountChange)
+        }
         onChangeTokenClicked={() => {
           onChangeTokenClick(isSell ? "base" : "quote");
         }}
@@ -169,7 +171,7 @@ const SwapInputs: FC<{
         readOnly={readOnly}
         label={t("orders.to")}
         selectedToken={!isSell ? baseTokenInfo : quoteTokenInfo}
-        onAmountChange={(e) =>
+        onAmountChange={(e: any) =>
           handleTokenAmountChange(e, onQuoteAmountChange || onBaseAmountChange)
         }
         onChangeTokenClicked={() => {

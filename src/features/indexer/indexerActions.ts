@@ -49,7 +49,7 @@ export const getFilteredOrders = createAsyncThunk<
         );
         const ordersToAdd = orderResponse.orders;
         orders = { ...orders, ...ordersToAdd };
-      } catch (e) {
+      } catch (e: any) {
         console.log(
           `[indexerSlice] Order request failed for ${
             indexerState.indexerUrls![i] || "an indexer node"

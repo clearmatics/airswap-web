@@ -15,7 +15,7 @@ const scrapeToken = (
     try {
       const tokenInfo = await airSwapScrapeToken(provider, address);
       resolve(tokenInfo);
-    } catch (e) {
+    } catch (e: any) {
       console.error(e);
       resolve(undefined);
     }

@@ -24,7 +24,7 @@ const SettingsButton = ({
   const popoverRef = useRef<HTMLDivElement>(null);
 
   const handleClick = useCallback(
-    (e) => {
+    (e: any) => {
       if (
         (containerRef.current && containerRef.current.contains(e.target)) ||
         (popoverRef.current && popoverRef.current.contains(e.target))
@@ -37,7 +37,7 @@ const SettingsButton = ({
   );
 
   const handleEscKey = useCallback(
-    (e) => {
+    (e: any) => {
       if (e.keyCode === 27) {
         setSettingsOpen(false);
       }

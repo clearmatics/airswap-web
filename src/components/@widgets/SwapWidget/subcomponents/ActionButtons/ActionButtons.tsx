@@ -152,6 +152,7 @@ const ActionButtons: FC<{
         disabled={isDisabled}
         onClick={onButtonClicked.bind(null, nextAction)}
       >
+        {/* @ts-ignore */}
         {mainButtonText}
       </MainButton>
     </>
