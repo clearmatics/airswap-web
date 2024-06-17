@@ -3,8 +3,6 @@ import { GoChevronDown } from "react-icons/go";
 
 import { chainNames } from "@airswap/utils";
 
-import nativeCurrency from "../../constants/nativeCurrency";
-import ChainSelectionPopover from "../ChainSelectionPopover/ChainSelectionPopover";
 import {
   Container,
   ChainSelectButton,
@@ -32,7 +30,7 @@ const ChainSelector = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const popoverRef = useRef<HTMLDivElement>(null);
 
-  const handleClick = useCallback((e) => {
+  const handleClick = useCallback((e: any) => {
     if (
       (containerRef.current && containerRef.current.contains(e.target)) ||
       (popoverRef.current && popoverRef.current.contains(e.target))
@@ -42,7 +40,7 @@ const ChainSelector = ({
     setChainSelectionOpen(false);
   }, []);
 
-  const handleEscKey = useCallback((e) => {
+  const handleEscKey = useCallback((e: any) => {
     if (e.keyCode === 27) {
       setChainSelectionOpen(false);
     }

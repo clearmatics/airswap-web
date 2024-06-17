@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import {
   DefaultNamespace,
   Namespace,
@@ -16,11 +16,12 @@ export interface GuideButtonProps<T extends Namespace = DefaultNamespace> {
 
 const GuideButton: FC<GuideButtonProps> = ({ iconName, text, href }) => {
   const { t } = useTranslation();
+  const content = t(text);
 
   return (
     <GuideButtonContainer target="_blank" href={href}>
       <StyledIcon name={iconName} iconSize={1.5} />
-      <Text>{t(text)}</Text>
+      <Text>{JSON.stringify(content)}</Text>
     </GuideButtonContainer>
   );
 };

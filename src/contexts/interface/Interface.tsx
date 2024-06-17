@@ -1,4 +1,4 @@
-import React, { Dispatch, FC, useEffect, useState } from "react";
+import React, { Dispatch, FC, ReactNode, useEffect, useState } from "react";
 
 import useDebounce from "../../hooks/useDebounce";
 import useWindowSize from "../../hooks/useWindowSize";
@@ -33,7 +33,11 @@ export const InterfaceContext =
     setTransactionsTabIsOpen: () => {},
   });
 
-const InterfaceProvider: FC = ({ children }) => {
+interface InterfaceProviderProps {
+  children: ReactNode;
+}
+
+const InterfaceProvider: React.FC<InterfaceProviderProps> = ({ children }) => {
   const { height: windowHeight } = useWindowSize();
 
   const [isConnecting, setIsConnecting] = useState(false);

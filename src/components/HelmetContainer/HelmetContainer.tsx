@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet";
 type HelmetContainerProps = {
   title: string;
   description?: string;
+  children?: React.ReactNode;
 };
 
 const HelmetContainer: FC<HelmetContainerProps> = ({

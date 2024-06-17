@@ -82,19 +82,19 @@ const Order: FC<PropsWithChildren<OrderProps>> = ({
   return (
     <Container className={className} onClick={handleClick}>
       <Text
-        onMouseEnter={(e) => onMouseEnter(e.currentTarget, index, 0)}
+        onMouseEnter={(e: any) => onMouseEnter(e.currentTarget, index, 0)}
         onMouseLeave={onMouseLeave}
       >
         {senderAmount}
       </Text>
       <Text
-        onMouseEnter={(e) => onMouseEnter(e.currentTarget, index, 1)}
+        onMouseEnter={(e: any) => onMouseEnter(e.currentTarget, index, 1)}
         onMouseLeave={onMouseLeave}
       >
         {signerAmount}
       </Text>
       <Text
-        onMouseEnter={(e) => onMouseEnter(e.currentTarget, index, 2)}
+        onMouseEnter={(e: any) => onMouseEnter(e.currentTarget, index, 2)}
         onMouseLeave={onMouseLeave}
       >
         {displayRate}

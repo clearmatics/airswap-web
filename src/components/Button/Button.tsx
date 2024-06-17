@@ -1,6 +1,5 @@
 import React from "react";
 
-import Icon from "../Icon/Icon";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import { StyledButton, StyledIcon, Text } from "./Button.styles";
 
@@ -53,7 +52,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         intent={intent}
         disabled={disabled || loading}
         justifyContent={justifyContent}
-        onClick={(e) => {
+        onClick={(e: any) => {
           !loading && onClick && onClick(e);
         }}
         ref={ref}

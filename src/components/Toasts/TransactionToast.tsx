@@ -73,6 +73,35 @@ const TransactionToast = ({
       : undefined;
   const isApproval = isApprovalTransaction(transaction);
 
+  const getTranslationContent = () => {
+    if (order && senderToken && signerToken) {
+      let translationKey = "wallet.transaction";
+      if (isLastLookOrderTransaction(transaction)) {
+        translationKey = "wallet.lastLookTransaction";
+      }
+
+      // @ts-ignore dynamic translation key
+      return t(translationKey, {
+        senderAmount: parseFloat(
+          Number(formatUnits(order.senderAmount, senderToken.decimals)).toFixed(
+            5
+          )
+        ),
+        senderToken: senderToken.symbol,
+        signerAmount: parseFloat(
+          Number(formatUnits(order.signerAmount, signerToken.decimals)).toFixed(
+            5
+          )
+        ),
+        signerToken: signerToken.symbol,
+      });
+    }
+
+    return t("toast.approve", { symbol: approvalToken?.symbol });
+  };
+
+  const translationContent = getTranslationContent();
+
   return (
     <Container>
       <IconContainer error={error}>
@@ -93,32 +122,7 @@ const TransactionToast = ({
             : t("toast.approvalComplete")}
         </InfoHeading>
         <SwapAmounts>
-          {(() => {
-            if (order && senderToken && signerToken) {
-              let translationKey = "wallet.transaction";
-              if (isLastLookOrderTransaction(transaction)) {
-                translationKey = "wallet.lastLookTransaction";
-              }
-
-              // @ts-ignore dynamic translation key
-              return t(translationKey, {
-                senderAmount: parseFloat(
-                  Number(
-                    formatUnits(order.senderAmount, senderToken.decimals)
-                  ).toFixed(5)
-                ),
-                senderToken: senderToken.symbol,
-                signerAmount: parseFloat(
-                  Number(
-                    formatUnits(order.signerAmount, signerToken.decimals)
-                  ).toFixed(5)
-                ),
-                signerToken: signerToken.symbol,
-              });
-            }
-
-            return t("toast.approve", { symbol: approvalToken?.symbol });
-          })()}
+          {typeof translationContent === "string" ? translationContent : null}
         </SwapAmounts>
       </TextContainer>
 

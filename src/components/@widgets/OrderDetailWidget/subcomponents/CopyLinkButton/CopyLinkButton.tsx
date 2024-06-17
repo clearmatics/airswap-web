@@ -1,10 +1,11 @@
-import React, {
+import {
   FC,
   ReactElement,
   useEffect,
   useMemo,
   useRef,
   useState,
+  ReactNode,
 } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -14,6 +15,7 @@ import { CopyLinkElement, StyledButton } from "./CopyLinkButton.styles";
 
 interface CopyLinkButtonProps {
   className?: string;
+  children?: ReactNode;
 }
 
 const CopyLinkButton: FC<CopyLinkButtonProps> = ({

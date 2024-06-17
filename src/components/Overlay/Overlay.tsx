@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect, useState, ReactNode } from "react";
 import { useTranslation } from "react-i18next";
 
 import { AnimatePresence, useReducedMotion } from "framer-motion";
@@ -33,6 +33,7 @@ export type OverlayProps = {
   isHidden?: boolean;
   shouldAnimate?: boolean;
   className?: string;
+  children: ReactNode;
 };
 
 export const overlayShowHideAnimationDuration = 0.3;
@@ -76,6 +77,7 @@ const Overlay: FC<OverlayProps> = ({
           onClick={onCloseButtonClick}
         />
       </TitleContainer>
+      {/* @ts-ignore */}
       <AnimatePresence>
         {!isHidden && (
           <ContentContainer

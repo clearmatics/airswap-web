@@ -114,7 +114,7 @@ export const selectBestPricing = createSelector(
             quoteAmount: quoteAmount.toString(),
           };
         }
-      } catch (e) {
+      } catch (e: any) {
         // calculateQuoteAmount will throw if the amount exceeds the maximum or
         // is less than the minimum - we can ignore these makers for the purpose
         // of this quote.

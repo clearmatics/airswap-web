@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, ReactNode } from "react";
 
 import { ConnectionStatusCircle } from "../../TransactionsTab.styles";
 import { Container, StyledInfoHeading } from "./WalletInfoButton.styles";
@@ -7,6 +7,7 @@ type WalletInfoButtonType = {
   isConnected?: boolean;
   onClick: () => void;
   className?: string;
+  children?: ReactNode;
 };
 
 const WalletInfoButton: FC<WalletInfoButtonType> = ({

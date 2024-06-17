@@ -407,7 +407,7 @@ export const takeLastLookOrder =
 
     try {
       await server.considerOrderERC20(order);
-    } catch (e) {
+    } catch (e: any) {
       console.error("[takeLastLookOrder] Error considering order", e);
     }
 

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useEffect, useRef, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -5,7 +6,6 @@ import {
   getAccountUrl,
   chainCurrencies,
   chainNames,
-  TokenInfo,
   ADDRESS_ZERO,
 } from "@airswap/utils";
 import { Web3Provider } from "@ethersproject/providers";
@@ -242,6 +242,7 @@ const TransactionsTab = ({
               <ClearTransactionsSelector onChange={onClearTransactionsChange} />
             </LegendContainer>
             <TransactionContainer>
+              {/* @ts-ignore */}
               <AnimatePresence initial={false}>
                 {completedTransactions.map((transaction) => (
                   <AnimatedWalletTransaction

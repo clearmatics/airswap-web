@@ -184,7 +184,7 @@ const TokenList = ({
             label={t("orders.searchByNameOrAddress")}
             value={tokenQuery}
             placeholder={t("orders.searchByNameOrAddress")}
-            onChange={(e) => {
+            onChange={(e: any) => {
               setTokenQuery(e.currentTarget.value);
             }}
           />

@@ -9,7 +9,6 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import { providers } from "ethers";
 
 import {
-  notifyConfirmation,
   notifyError,
   notifyRejectedByUserError,
 } from "../../components/Toasts/ToastController";
@@ -42,7 +41,7 @@ export const decompressAndSetActiveOrder = createAsyncThunk(
       dispatch(setActiveOrder(order));
 
       dispatch(setStatus("open"));
-    } catch (e) {
+    } catch (e: any) {
       console.error(e);
       dispatch(setStatus("not-found"));
     }
