@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import Icon from "../../../Icon/Icon";
 import { CommitButton, Container, GithubButton } from "./GithubInfo.styles";
 
-const githubLink = "https://github.com/airswap/airswap-web";
+const githubLink = "https://github.com/clearmatics/airswap-web";
 const githubLastCommitIdFallback = "DEV";
 const githubLastCommitId = process.env.BUILD_VERSION;
 const commitDate = process.env.BUILD_DATE;
