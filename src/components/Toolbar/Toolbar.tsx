@@ -80,11 +80,6 @@ const Toolbar: FC<ToolbarProps> = ({
           text={t("common.otc")}
           link={`/${userOrders.length ? AppRoutes.myOrders : AppRoutes.make}`}
         />
-        <ToolbarButton
-          iconName="bars"
-          text={t("common.stats")}
-          href="https://dune.com/airswap/airswap-v3"
-        />
         <StyledSocialButtons />
       </ToolbarButtonsContainer>
     </ToolbarContainer>

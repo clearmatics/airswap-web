@@ -119,7 +119,6 @@ const Page: FC<PageProps> = ({ children, className }): ReactElement => {
             />
           </Overlay>
         </WidgetFrame>
-        <StyledSocialButtons />
       </InnerContainer>
     </StyledPage>
   );
