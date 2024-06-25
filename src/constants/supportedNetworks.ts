@@ -1,3 +1,3 @@
 import { ChainIds } from "@airswap/utils";
 
-export const supportedNetworks: number[] = [ChainIds.DEVNET];
+export const supportedNetworks: number[] = [ChainIds.PICCADILLY];
