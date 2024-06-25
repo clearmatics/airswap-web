@@ -1,6 +1,6 @@
 {
   "name": "airswap-web",
-  "version": "0.1.0",
+  "version": "0.1.0-autonity.2",
   "private": true,
   "homepage": "https://swap.eth.limo/",
   "scripts": {
@@ -13,7 +13,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@airswap/libraries": "https://github.com/clearmatics/airswap-protocols/releases/download/pcgc-r6.1/airswap-libraries-4.3.4-autonity.3.tgz",
+    "@airswap/libraries": "https://github.com/clearmatics/airswap-protocols/releases/download/pcgc-r6.2/airswap-libraries-4.3.4-autonity.4.tgz",
     "@craco/craco": "^6.2.0",
     "@fontsource/dm-mono": "^4.5.0",
     "@greypixel_/nicenumbers": "^0.0.18",
