@@ -4,6 +4,6 @@ export const sizes = {
   toolbarMaxHeight: "44rem",
   tradeContainerPadding: "2rem",
   tradeContainerMobilePadding: "1rem",
-  widgetSize: "35rem",
+  widgetSize: "37rem",
   widgetMobileSize: "24rem",
 };
