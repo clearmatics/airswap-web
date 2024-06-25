@@ -122,7 +122,7 @@ const MakeWidget: FC = () => {
   const [takerAmount, setTakerAmount] = useState("");
 
   // States derived from user input
-  const defaultTokenToAddress = null;
+  const defaultTokenToAddress = nativeCurrency[chainId!]?.address;
   const makerTokenInfo = useTokenInfo(userTokens.tokenFrom || null);
   const takerTokenInfo = useTokenInfo(
     userTokens.tokenTo || defaultTokenToAddress || null
@@ -237,7 +237,7 @@ const MakeWidget: FC = () => {
   };
 
   const handleSwitchTokensButtonClick = () => {
-    handleSetToken("base", userTokens.tokenTo || defaultTokenToAddress || "");
+    handleSetToken("base", userTokens.tokenTo || defaultTokenToAddress);
     setMakerAmount(takerAmount);
     setTakerAmount(makerAmount);
   };

@@ -21,8 +21,8 @@ const useTokenOrFallback = (
   const customTokens = useAppSelector(selectCustomTokenAddresses);
   const { chainId } = useWeb3React<Web3Provider>();
 
-  const defaultBaseTokenAddress = null;
-  const defaultQuoteTokenAddress = null;
+  const defaultBaseTokenAddress = useTokenAddress("USDT");
+  const defaultQuoteTokenAddress = nativeCurrency[chainId || 1]?.address;
 
   return useMemo(() => {
     return getTokenOrFallback(
